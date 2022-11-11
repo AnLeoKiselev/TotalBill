@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.5647058824, green: 0.1529411765, blue: 0.5568627451, alpha: 1)
         button.titleLabel?.font = UIFont(name: "Avenir Next Bold", size: 20)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(calculateButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -70,6 +71,11 @@ class MainViewController: UIViewController {
         
     }
     
+    @objc func calculateButtonTapped() {
+        print ("calc")
+    }
+    
+    
         //extension MainViewController {
         
         func setConstraints() {
@@ -93,7 +99,7 @@ class MainViewController: UIViewController {
                 calculateButton.heightAnchor.constraint(equalToConstant: 60)
             ])
             
-            print ("setConstraints")
+            
             
         }
         
