@@ -49,6 +49,8 @@ class MainViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    let totalBillView = TotalBillView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,7 @@ class MainViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(logoImageView)
         view.addSubview(descriptionLabel)
+        view.addSubview(totalBillView)
         view.addSubview(calculateButton)
         
         
@@ -92,6 +95,14 @@ class MainViewController: UIViewController {
                 //descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
                 descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
                 descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+                
+                totalBillView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
+                totalBillView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                totalBillView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                totalBillView.heightAnchor.constraint(equalToConstant: 150),
+                
+                
+                
                 
                 calculateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
                 calculateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
